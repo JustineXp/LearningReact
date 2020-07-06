@@ -1,21 +1,21 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import Note from "./Note";
-import notes from "../notes";
+import LoginForm from "./Login";
+// import Register from "./Register";
+
+var isLoggedIn = true;
+var currentHour = new Date().getHours();
+console.log(currentHour);
+
+var userIsregistered = false;
+
 
 function App() {
   return (
-    <div>
-      <Header />
-      {notes.map((eachNote) => (
-        <Note
-          key={eachNote.key}
-          title={eachNote.title}
-          content={eachNote.content.substring(0, 45) + "..."}
-        />
-      ))}
-      <Footer />
+    <div className="container">
+    {/* {isLoggedIn ? <h1>Hello</h1> :<LoginForm />} */}
+    {/* {currentHour >12 && <Register/>} */}
+    {/* {userIsregistered ? <LoginForm /> : <Register />} */}
+    <LoginForm reGistered={userIsregistered} />
     </div>
   );
 }
