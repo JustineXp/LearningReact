@@ -1,21 +1,22 @@
-import React from "react";
-import LoginForm from "./Login";
-// import Register from "./Register";
-
-var isLoggedIn = true;
-var currentHour = new Date().getHours();
-console.log(currentHour);
-
-var userIsregistered = false;
-
+import React, {useState} from "react";
 
 function App() {
+
+  const [count, setCount] = useState(0);
+
+  const increase = ()=>{
+    setCount(count + 1);
+  }
+
+  const decrease = ()=>{
+    setCount(count - 1);
+  }
+
   return (
     <div className="container">
-    {/* {isLoggedIn ? <h1>Hello</h1> :<LoginForm />} */}
-    {/* {currentHour >12 && <Register/>} */}
-    {/* {userIsregistered ? <LoginForm /> : <Register />} */}
-    <LoginForm reGistered={userIsregistered} />
+      <h1>{count}</h1>
+      <button onClick={decrease}>-</button>
+      <button onClick={increase}>+</button>
     </div>
   );
 }
